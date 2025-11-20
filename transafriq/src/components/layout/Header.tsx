@@ -9,12 +9,12 @@ const Header = () => {
   return (
     <>
       <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
+        <div className="container mx-auto px-4 py-2 md:py-3 flex justify-between items-center max-w-7xl">
           <Link to="/" className="flex items-center">
             <img
-              src="/logo.JPG"
+              src="/logo.png"
               alt="TransAfriq Logo"
-              className="h-10 w-auto md:h-12"
+              className="h-4 w-auto md:h-5 lg:h-6"
             />
           </Link>
 

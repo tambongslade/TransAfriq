@@ -3,6 +3,7 @@ import Header from '../components/layout/Header';
 import QuickFilterChips from '../components/home/QuickFilterChips';
 import VehicleCard from '../components/home/VehicleCard';
 import FloatingWhatsAppButton from '../components/home/FloatingWhatsAppButton';
+import PartnerLogos from '../components/common/PartnerLogos';
 import { mockVehicles } from '../data/mockVehicles';
 
 const Home = () => {
@@ -45,17 +46,10 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-12 py-8">
+      <footer className="bg-white border-t border-gray-200 mt-12 py-12">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Paiement sécurisé</h3>
-            <div className="flex justify-center items-center gap-6 flex-wrap">
-              <span className="text-2xl">🟧 Orange Money</span>
-              <span className="text-2xl">📱 MTN</span>
-              <span className="text-2xl">🌊 Wave</span>
-            </div>
-          </div>
-          <div className="text-center text-sm text-gray-600">
+          <PartnerLogos />
+          <div className="text-center text-sm text-gray-600 mt-8 pt-8 border-t border-gray-200">
             <p>&copy; 2025 TransAfriq. Tous droits réservés.</p>
           </div>
         </div>

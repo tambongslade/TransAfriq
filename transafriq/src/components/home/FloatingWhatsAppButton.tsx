@@ -9,7 +9,7 @@ const FloatingWhatsAppButton = () => {
 
   return (
     <button
-      className="fixed bottom-5 right-5 w-14 h-14 md:w-16 md:h-16 bg-[var(--whatsapp)] hover:bg-[var(--whatsapp-dark)] rounded-full shadow-lg hover:shadow-xl flex items-center justify-center z-40 transition-all duration-300 hover:scale-110 active:scale-95"
+      className="fixed bottom-5 right-5 w-14 h-14 md:w-16 md:h-16 bg-[var(--whatsapp)] hover:bg-[var(--whatsapp-dark)] rounded-full shadow-xl hover:shadow-2xl flex items-center justify-center z-50 transition-all duration-300 hover:scale-110 active:scale-95"
       onClick={handleClick}
       aria-label="Contact WhatsApp"
     >
