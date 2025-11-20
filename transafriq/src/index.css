@@ -1,68 +1,77 @@
+@import "tailwindcss";
+
+/* Custom CSS Variables for Mobile-First Design - Logo Colors */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Primary Colors - From Logo Navy Blue */
+  --primary: #1E3A5F;      /* Logo Navy Blue */
+  --primary-dark: #152842;
+
+  /* Secondary - From Logo Cyan/Teal */
+  --secondary: #0891B2;    /* Logo Cyan Blue */
+  --secondary-dark: #0E7490;
+
+  /* Accent - From Logo Orange */
+  --accent: #F59E0B;       /* Logo Orange/Amber */
+  --accent-dark: #D97706;
+
+  /* Neutrals */
+  --dark: #1F2937;         /* Navy from logo */
+  --gray-dark: #4B5563;
+  --gray: #9CA3AF;
+  --gray-light: #E5E7EB;
+  --white: #FFFFFF;
+
+  /* Background */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F9FAFB;
+
+  /* Status */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  /* WhatsApp (for contact button) */
+  --whatsapp: #25D366;
+  --whatsapp-dark: #1FA855;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-secondary);
+  color: var(--dark);
   line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Ensure minimum tap targets for mobile */
+button, a {
+  min-height: 44px;
+  min-width: 44px;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* Remove default button styles */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-family: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
