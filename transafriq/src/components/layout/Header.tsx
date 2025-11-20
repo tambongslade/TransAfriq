@@ -9,17 +9,17 @@ const Header = () => {
   return (
     <>
       <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-4 py-2 md:py-3 flex justify-between items-center max-w-7xl">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
           <Link to="/" className="flex items-center">
             <img
               src="/logo.png"
               alt="TransAfriq Logo"
-              className="h-4 w-auto md:h-5 lg:h-6"
+              className="h-9 w-auto"
             />
           </Link>
 
           <button
-            className="text-2xl p-2 text-gray-700 hover:text-[var(--primary)] transition-colors"
+            className="text-2xl p-2 text-gray-700 hover:text-primary-600 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >

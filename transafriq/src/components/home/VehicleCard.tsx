@@ -13,7 +13,7 @@ const VehicleCard = ({ vehicle }: VehicleCardProps) => {
   return (
     <Link
       to={`/vehicule/${vehicle.id}`}
-      className="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-[var(--primary)]"
+      className="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-primary-500"
     >
       {/* Image Section */}
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
@@ -29,7 +29,7 @@ const VehicleCard = ({ vehicle }: VehicleCardProps) => {
           </div>
         )}
         {vehicle.featured && (
-          <div className="absolute top-2 left-2 bg-[var(--accent)] text-white px-2 py-1 rounded text-[10px] font-bold">
+          <div className="absolute top-2 left-2 bg-accent-500 text-white px-2 py-1 rounded text-[10px] font-bold">
             ⭐ VEDETTE
           </div>
         )}
@@ -43,7 +43,7 @@ const VehicleCard = ({ vehicle }: VehicleCardProps) => {
             <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wide">
               {vehicle.brand}
             </h3>
-            <p className="text-sm font-bold text-[var(--primary)] whitespace-nowrap">
+            <p className="text-sm font-bold text-primary-600 whitespace-nowrap">
               {formatPrice(vehicle.price)}
             </p>
           </div>
@@ -53,19 +53,19 @@ const VehicleCard = ({ vehicle }: VehicleCardProps) => {
         {/* Specs Grid */}
         <div className="grid grid-cols-2 gap-y-1.5 gap-x-2 pt-2 border-t border-gray-100">
           <div className="flex items-center gap-1.5 text-[10px] text-gray-600">
-            <HiCalendar className="text-[var(--primary)] flex-shrink-0" />
+            <HiCalendar className="text-primary-500 flex-shrink-0" />
             <span className="truncate">{vehicle.year}</span>
           </div>
           <div className="flex items-center gap-1.5 text-[10px] text-gray-600">
-            <MdSpeed className="text-[var(--primary)] flex-shrink-0" />
+            <MdSpeed className="text-primary-500 flex-shrink-0" />
             <span className="truncate">{vehicle.specs.mileage.toLocaleString()} km</span>
           </div>
           <div className="flex items-center gap-1.5 text-[10px] text-gray-600">
-            <BsFillFuelPumpFill className="text-[var(--primary)] flex-shrink-0" />
+            <BsFillFuelPumpFill className="text-primary-500 flex-shrink-0" />
             <span className="truncate">{vehicle.specs.fuelType}</span>
           </div>
           <div className="flex items-center gap-1.5 text-[10px] text-gray-600">
-            <MdSettings className="text-[var(--primary)] flex-shrink-0" />
+            <MdSettings className="text-primary-500 flex-shrink-0" />
             <span className="truncate">{vehicle.specs.transmission}</span>
           </div>
         </div>

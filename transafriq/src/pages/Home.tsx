@@ -38,7 +38,7 @@ const Home = () => {
         {/* Load More Button (for future pagination) */}
         {filteredVehicles.length > 0 && (
           <div className="text-center mt-8">
-            <button className="px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg hover:bg-[var(--primary-dark)] transition-colors shadow-md">
+            <button className="px-8 py-3 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors shadow-md min-h-[44px]">
               Charger plus
             </button>
           </div>

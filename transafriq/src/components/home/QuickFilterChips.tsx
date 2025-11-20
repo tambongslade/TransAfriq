@@ -1,26 +1,26 @@
-import { CATEGORIES } from '../../utils/constants';
-
 interface QuickFilterChipsProps {
   activeFilter: string;
   onFilterChange: (filter: string) => void;
 }
 
 const QuickFilterChips = ({ activeFilter, onFilterChange }: QuickFilterChipsProps) => {
+  const filters = ['Tout', 'SUV', 'Berline', 'Pick-up', 'Utilitaire'];
+
   return (
-    <div className="sticky top-[45px] z-30 bg-white border-b border-gray-200 py-2.5 overflow-x-auto shadow-sm">
-      <div className="container mx-auto px-3 max-w-7xl">
-        <div className="flex gap-2 min-w-max md:justify-center">
-          {CATEGORIES.map((category) => (
+    <div className="sticky top-[61px] z-40 bg-white border-b border-gray-200 shadow-sm">
+      <div className="container mx-auto px-4 py-3 max-w-7xl">
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+          {filters.map((filter) => (
             <button
-              key={category}
-              onClick={() => onFilterChange(category)}
-              className={`px-3 py-1.5 rounded-full font-medium text-xs whitespace-nowrap transition-all ${
-                activeFilter === category
-                  ? 'bg-[var(--primary)] text-white shadow-md ring-2 ring-[var(--primary)] ring-opacity-50'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300'
+              key={filter}
+              onClick={() => onFilterChange(filter)}
+              className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 min-h-[44px] ${
+                activeFilter === filter
+                  ? 'bg-primary-500 text-white shadow-md'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              {category}
+              {filter}
             </button>
           ))}
         </div>

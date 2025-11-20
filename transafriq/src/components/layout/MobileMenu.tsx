@@ -20,7 +20,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity"
+        className="fixed inset-0 bg-black/50 z-40 transition-opacity"
         onClick={onClose}
       />
 
@@ -33,10 +33,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               <li key={item.to}>
                 <Link
                   to={item.to}
-                  className="flex items-center gap-3 px-6 py-4 text-gray-700 hover:bg-gray-100 hover:text-[var(--primary)] transition-colors"
+                  className="flex items-center gap-3 px-6 py-4 text-gray-700 hover:bg-gray-100 hover:text-primary-600 transition-colors min-h-[44px]"
                   onClick={onClose}
                 >
-                  <Icon className="text-xl" />
+                  <Icon className="text-xl flex-shrink-0" />
                   <span className="font-medium">{item.label}</span>
                 </Link>
               </li>
