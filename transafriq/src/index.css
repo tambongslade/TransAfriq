@@ -1,77 +1,182 @@
 @import "tailwindcss";
 
-/* Custom CSS Variables for Mobile-First Design - Logo Colors */
-:root {
-  /* Primary Colors - From Logo Navy Blue */
-  --primary: #1E3A5F;      /* Logo Navy Blue */
-  --primary-dark: #152842;
+/* ========================================
+   Tailwind v4 Theme Configuration
+   Mobile-First Design for TransAfriq
+   ======================================== */
 
-  /* Secondary - From Logo Cyan/Teal */
-  --secondary: #0891B2;    /* Logo Cyan Blue */
-  --secondary-dark: #0E7490;
+@theme {
+  /* Primary Brand Colors - Navy Blue (#1E3A5F) */
+  --color-primary-50: oklch(0.97 0.01 250);
+  --color-primary-100: oklch(0.94 0.02 250);
+  --color-primary-200: oklch(0.86 0.04 250);
+  --color-primary-300: oklch(0.72 0.08 250);
+  --color-primary-400: oklch(0.58 0.12 250);
+  --color-primary-500: oklch(0.32 0.08 250);  /* Main Brand Color */
+  --color-primary-600: oklch(0.28 0.07 250);
+  --color-primary-700: oklch(0.23 0.06 250);
+  --color-primary-800: oklch(0.18 0.05 250);
+  --color-primary-900: oklch(0.13 0.04 250);
 
-  /* Accent - From Logo Orange */
-  --accent: #F59E0B;       /* Logo Orange/Amber */
-  --accent-dark: #D97706;
+  /* Secondary Colors - Cyan (#0891B2) */
+  --color-secondary-50: oklch(0.97 0.02 195);
+  --color-secondary-100: oklch(0.93 0.04 195);
+  --color-secondary-200: oklch(0.84 0.08 195);
+  --color-secondary-300: oklch(0.75 0.12 195);
+  --color-secondary-400: oklch(0.65 0.16 195);
+  --color-secondary-500: oklch(0.60 0.14 195);  /* Cyan Accent */
+  --color-secondary-600: oklch(0.52 0.12 195);
+  --color-secondary-700: oklch(0.44 0.10 195);
+  --color-secondary-800: oklch(0.36 0.08 195);
+  --color-secondary-900: oklch(0.28 0.06 195);
 
-  /* Neutrals */
-  --dark: #1F2937;         /* Navy from logo */
-  --gray-dark: #4B5563;
-  --gray: #9CA3AF;
-  --gray-light: #E5E7EB;
-  --white: #FFFFFF;
+  /* Accent Colors - Orange (#F59E0B) */
+  --color-accent-50: oklch(0.98 0.02 85);
+  --color-accent-100: oklch(0.95 0.05 85);
+  --color-accent-200: oklch(0.90 0.10 85);
+  --color-accent-300: oklch(0.85 0.15 85);
+  --color-accent-400: oklch(0.78 0.18 85);
+  --color-accent-500: oklch(0.72 0.16 85);  /* Orange Highlight */
+  --color-accent-600: oklch(0.62 0.14 85);
+  --color-accent-700: oklch(0.52 0.12 85);
+  --color-accent-800: oklch(0.42 0.10 85);
+  --color-accent-900: oklch(0.32 0.08 85);
 
-  /* Background */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F9FAFB;
+  /* Success - WhatsApp Green (#25D366) */
+  --color-success-50: oklch(0.96 0.04 145);
+  --color-success-100: oklch(0.92 0.08 145);
+  --color-success-200: oklch(0.84 0.12 145);
+  --color-success-300: oklch(0.76 0.16 145);
+  --color-success-400: oklch(0.68 0.18 145);
+  --color-success-500: oklch(0.72 0.20 145);  /* WhatsApp Green */
+  --color-success-600: oklch(0.58 0.18 145);
+  --color-success-700: oklch(0.48 0.16 145);
+  --color-success-800: oklch(0.38 0.14 145);
+  --color-success-900: oklch(0.28 0.12 145);
 
-  /* Status */
-  --success: #10B981;
-  --warning: #F59E0B;
-  --error: #EF4444;
-
-  /* WhatsApp (for contact button) */
-  --whatsapp: #25D366;
-  --whatsapp-dark: #1FA855;
+  /* Custom Shadows - Mobile Optimized */
+  --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --shadow-card: 0 2px 8px -2px rgb(0 0 0 / 0.1);
+  --shadow-large: 0 8px 24px -4px rgb(0 0 0 / 0.12);
 }
 
-* {
+/* ========================================
+   Global Reset & Base Styles
+   ======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-secondary);
-  color: var(--dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
   line-height: 1.5;
+  color: rgb(24 24 27);  /* gray-900 */
+  background-color: rgb(250 250 250);  /* gray-50 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Ensure minimum tap targets for mobile */
-button, a {
-  min-height: 44px;
-  min-width: 44px;
+/* ========================================
+   Mobile-First Interactive Elements
+   ======================================== */
+
+/* Touch-friendly tap targets (minimum 44x44px) */
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
 }
 
-/* Remove default button styles */
 button {
-  background: none;
-  border: none;
-  cursor: pointer;
   font-family: inherit;
+  cursor: pointer;
 }
 
-/* Image optimization */
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* ========================================
+   Accessibility
+   ======================================== */
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   Custom Scrollbar (Optional)
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(244 244 245);  /* gray-100 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(161 161 170);  /* gray-400 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(113 113 122);  /* gray-500 */
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
