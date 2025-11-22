@@ -5,7 +5,15 @@
       "Bash(npm install:*)",
       "Bash(npm run dev:*)",
       "Bash(timeout:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(npm create:*)",
+      "Bash(rm:*)",
+      "Bash(npm run build:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(pip install:*)",
+      "Bash(python3 -m pip install:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []

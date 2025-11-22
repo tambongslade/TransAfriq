@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Configuration files with credentials
+config.py
+
+# Scraped data
+scraped_data/
+
+# Vehicle images
+vehicle_images/
+
+# Log files
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
